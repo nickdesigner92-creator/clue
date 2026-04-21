@@ -1274,11 +1274,19 @@
         .note-and-cta { text-align: left; margin: 4rem 0 0 0; }
         .comparison-note { font-size: 0.875rem; color: var(--text-gray); margin-bottom: 2rem; line-height: 1.5; }
 
-        /* --- FOLD 9: TAKE A TOUR --- */
+/* --- FOLD 9: TAKE A TOUR --- */
         .take-a-tour-section { background-color: var(--bg-offwhite); }
         .take-a-tour-section .section-label { display: block; text-align: center; margin-bottom: 2rem; }
-        .tour-card { width: 100%; background-color: var(--navy); border-radius: 12px; padding: 4rem; color: #fff; text-align: center; box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.2); }
+        
+        /* Updated .tour-card */
+        .tour-card { width: 100%; background-color: var(--navy); border-radius: 12px; padding: 4rem; color: #fff; text-align: center; box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden; }
+        
+        /* New Video Styles */
+        .tour-bg-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); object-fit: cover; z-index: 0; opacity: 0.1; pointer-events: none; }
+        .tour-content-wrapper { position: relative; z-index: 2; }
+        
         .tour-card h2 { text-align: center; color: #fff; margin-bottom: 1.5rem; }
+
         .tour-card .tour-subheadline { font-size: 1.125rem; line-height: 1.6; color: #d1d5db; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; }
         .tour-actions { margin-bottom: 2rem; }
         .tour-actions .btn { padding: 1rem 2rem; font-size: 1.125rem; }
@@ -3697,9 +3705,9 @@
                 </table>
             </div>
 
-            <div class="note-and-cta reveal delay-200">
+<div class="note-and-cta reveal delay-200">
                 <p class="comparison-note">Note: Based on standard single-solution software capabilities.</p>
-
+                <a href="https://www.getclue.com/compare" class="btn btn-primary" target="_blank">Compare Clue</a>
             </div>
         </div>
     </section>
@@ -3708,14 +3716,22 @@
         <div class="container">
             <span class="section-label reveal">See CLUE in action</span>
             <div class="tour-card reveal delay-100">
-                <h2>Everything you just read.<br>In 3 minutes.</h2>
-                <p class="tour-subheadline">Walk through the live fleet map, work order management, smart maintenance, and reporting, without sitting through a sales call.</p>
                 
-                <div class="tour-actions">
-                    <a href="#demo" class="btn btn-primary">Take the interactive tour</a>
+                <video class="tour-bg-video" autoplay muted loop playsinline>
+                    <source src="https://res.cloudinary.com/djpasasgr/video/upload/q_auto/f_auto/v1776783181/0421_smhgnu.mp4" type="video/mp4">
+                </video>
+
+                <div class="tour-content-wrapper">
+                    <h2>Everything you just read.<br>In 3 minutes.</h2>
+                    <p class="tour-subheadline">Walk through the live fleet map, work order management, smart maintenance, and reporting, without sitting through a sales call.</p>
+                    
+                    <div class="tour-actions">
+                        <a href="#demo" class="btn btn-primary">Take the interactive tour</a>
+                    </div>
+                    
+                    <p class="tour-supporting-line">No login required. No form to fill. Just the product.</p>
                 </div>
-                
-                <p class="tour-supporting-line">No login required. No form to fill. Just the product.</p>
+
             </div>
         </div>
     </section>
